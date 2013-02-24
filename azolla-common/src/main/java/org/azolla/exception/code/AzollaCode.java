@@ -9,12 +9,9 @@ package org.azolla.exception.code;
 /**
  * Azolla Exception Code
  * 
- * <p>XXX		:core code
- * <p>XXXXXX 	:component code
- * <p>XXXXXXXXX	:application code
- * 
- * <p>XXXXX		:For Azolla Component (^_^)
- * <p>XXXXXXXX	:For Azolla Application (^=^)
+ * <p>[11,99]				:For Azoll Core
+ * <p>[10001,99999]			:For Azolla Component
+ * <p>[10000001,99999999]	:For Azolla Application
  *
  * @author 	sk@azolla.org
  * @version 1.0.0
@@ -22,8 +19,15 @@ package org.azolla.exception.code;
  */
 public enum AzollaCode implements ExceptionCoder
 {
+	/** This code(0) is for exception out of Azolla */
+	UNAZOLLA(0),
 
-	UNAZOLLA(000);	// This code is for exception out of Azolla
+	/** This code(11) is for exception AzollaException Error, It like your feet */
+	AZOLLA(11),
+	NULL(12),
+
+	/** [11000,11999] : For azolla-common*/
+	MODELHELPER_MARSHAL(11001);
 
 	private final int	code;
 

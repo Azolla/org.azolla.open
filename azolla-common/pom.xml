@@ -10,12 +10,17 @@
 		<artifactId>azolla-open</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
 		</dependency>
 	</dependencies>
 </project>

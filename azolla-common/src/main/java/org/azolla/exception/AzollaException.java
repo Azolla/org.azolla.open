@@ -14,6 +14,8 @@ import java.util.TreeMap;
 import org.azolla.exception.code.AzollaCode;
 import org.azolla.exception.code.ExceptionCoder;
 
+import com.google.common.base.Strings;
+
 /**
  * The exception for Azolla
  * 
@@ -33,7 +35,7 @@ public class AzollaException extends RuntimeException
 	 */
 	public AzollaException(ExceptionCoder code)
 	{
-		this.code = code;
+		setCode(code);
 	}
 
 	/**
@@ -42,7 +44,7 @@ public class AzollaException extends RuntimeException
 	public AzollaException(ExceptionCoder code, String message)
 	{
 		super(message);
-		this.code = code;
+		setCode(code);
 	}
 
 	/**
@@ -51,7 +53,7 @@ public class AzollaException extends RuntimeException
 	public AzollaException(ExceptionCoder code, Throwable cause)
 	{
 		super(cause);
-		this.code = code;
+		setCode(code);
 	}
 
 	/**
@@ -60,7 +62,7 @@ public class AzollaException extends RuntimeException
 	public AzollaException(ExceptionCoder code, String message, Throwable cause)
 	{
 		super(message, cause);
-		this.code = code;
+		setCode(code);
 	}
 
 	/**
@@ -72,7 +74,7 @@ public class AzollaException extends RuntimeException
 	 */
 	public static AzollaException wrap(Throwable cause)
 	{
-		return wrap(cause, AzollaCode.UNAZOLLA);
+		return wrap(cause, null);
 	}
 
 	/**
@@ -85,21 +87,31 @@ public class AzollaException extends RuntimeException
 	 */
 	public static AzollaException wrap(Throwable cause, ExceptionCoder code)
 	{
-		if(cause instanceof AzollaException)
+		if(null == cause)
+		{
+			if(null == code)
+			{
+				return new AzollaException(AzollaCode.NULL);
+			}
+			else
+			{
+				return new AzollaException(code);
+			}
+
+		}
+		else if(cause instanceof AzollaException)
 		{
 			AzollaException se = (AzollaException) cause;
+
 			if(code != null && code != se.getCode())
 			{
 				return new AzollaException(code, cause.getMessage(), cause);
 			}
+
 			return se;
 		}
-		else
-		{
-			return new AzollaException(code, cause.getMessage(), cause);
-		}
+		return new AzollaException(code, cause.getMessage(), cause);
 	}
-
 
 	/**
 	 * @see java.lang.Throwable#printStackTrace(java.io.PrintStream)
@@ -183,7 +195,7 @@ public class AzollaException extends RuntimeException
 
 	public AzollaException set(String key, Object value)
 	{
-		properties.put(key, value);
+		properties.put(Strings.nullToEmpty(key), value);
 		return this;
 	}
 
@@ -194,6 +206,10 @@ public class AzollaException extends RuntimeException
 	 */
 	public ExceptionCoder getCode()
 	{
+		if(null == code)
+		{
+			code = AzollaCode.UNAZOLLA;
+		}
 		return code;
 	}
 
@@ -204,7 +220,14 @@ public class AzollaException extends RuntimeException
 	 */
 	public void setCode(ExceptionCoder code)
 	{
-		this.code = code;
+		if(null == code)
+		{
+			this.code = AzollaCode.AZOLLA;
+		}
+		else
+		{
+			this.code = code;
+		}
 	}
 
 	/**
@@ -216,5 +239,4 @@ public class AzollaException extends RuntimeException
 	{
 		return properties;
 	}
-
 }

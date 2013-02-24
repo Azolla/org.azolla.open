@@ -15,6 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.google.common.base.Strings;
+
 /**
  * The coder is very lazy, nothing to write for this AzollaExceptionTest class
  *
@@ -75,7 +77,8 @@ public class AzollaExceptionTest
 	{
 		if(null != ae)
 		{
-			ae.printStackTrace();
+			//			ae.printStackTrace();
+			System.out.println(ae.getCode());
 		}
 	}
 
@@ -85,6 +88,8 @@ public class AzollaExceptionTest
 	@Test(expected = AzollaException.class)
 	public void testAzollaExceptionExceptionCoder()
 	{
+		Throwable t = null;
+		new AzollaException(null, t);
 		throw new AzollaException(AzollaCode.UNAZOLLA);
 	}
 
@@ -132,7 +137,12 @@ public class AzollaExceptionTest
 	@Test
 	public void testWrapThrowableExceptionCoder()
 	{
+		//		AzollaException.wrap(null, null);
+		AzollaException ae1 = AzollaException.wrap(new RuntimeException(), null);
+		AzollaException ae2 = AzollaException.wrap(new AzollaException(null, null, null), null);
 		AzollaException.wrap(runtimeException(), AzollaCode.UNAZOLLA);
+		System.out.println(ae1);
+		System.out.println(ae2);
 	}
 
 	/**
@@ -141,6 +151,7 @@ public class AzollaExceptionTest
 	@Test
 	public void testPrintStackTracePrintStream()
 	{
+		//		ae.printStackTrace(pw);
 		ae.printStackTrace();
 	}
 
@@ -169,6 +180,13 @@ public class AzollaExceptionTest
 	@Test
 	public void testSet()
 	{
+		//		ae.set(null, null);	//error
+		ae.set("", null);
+		System.out.println(ae.get(""));
+		ae.set(Strings.nullToEmpty(null), "");
+		System.out.println(ae.get(""));
+		System.out.println(Strings.nullToEmpty(null));
+		System.out.println(ae.get(""));
 		ae.set(testKey, testValue);
 	}
 
@@ -178,8 +196,8 @@ public class AzollaExceptionTest
 	@Test
 	public void testGetCode()
 	{
-		Assert.assertEquals(AzollaCode.UNAZOLLA, ae.getCode());
-		Assert.assertSame(AzollaCode.UNAZOLLA, ae.getCode());
+		Assert.assertEquals(AzollaCode.AZOLLA, ae.getCode());
+		Assert.assertSame(AzollaCode.AZOLLA, ae.getCode());
 	}
 
 	/**
@@ -199,5 +217,4 @@ public class AzollaExceptionTest
 	{
 		ae.getProperties();
 	}
-
 }

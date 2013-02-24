@@ -72,6 +72,7 @@ public class AzollaCoderTest
 		Assert.assertEquals(AzollaCode.valueOf("UNAZOLLA"), AzollaCode.UNAZOLLA);
 		Assert.assertSame(AzollaCode.valueOf("UNAZOLLA"), AzollaCode.UNAZOLLA);
 		Assert.assertNotEquals(100, AzollaCode.UNAZOLLA);
+		System.out.println(AzollaCode.UNAZOLLA.getCode());
 	}
 
 }
