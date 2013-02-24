@@ -1,0 +1,5 @@
+Simple：		XXX_XXX_Verx.x 	{txt,xml}
+Normal：		XXX_XXX_Verx.x.x
+Product：	XXX Verx.x.x.x
+JAR：		azolla.XXX.XXX_x.x.x.${date}.jar
+Style:		XXX_XXX_Sx_Verx.x
