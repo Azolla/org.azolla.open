@@ -17,7 +17,7 @@ package org.azolla.exception.code;
  * @version 1.0.0
  * @since 	ADK1.0
  */
-public enum AzollaCode implements ExceptionCoder
+public enum AzollaCode implements ErrorCoder
 {
 	/** This code(0) is for exception out of Azolla */
 	UNAZOLLA(0),
@@ -41,7 +41,7 @@ public enum AzollaCode implements ExceptionCoder
 	}
 
 	/**
-	 * @see org.azolla.exception.code.ExceptionCoder#getCode()
+	 * @see org.azolla.exception.code.ErrorCoder#getCode()
 	 * @return
 	 */
 	@Override

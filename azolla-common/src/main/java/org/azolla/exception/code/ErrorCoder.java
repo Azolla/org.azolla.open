@@ -21,7 +21,7 @@ package org.azolla.exception.code;
  * @version 1.0.0
  * @since 	ADK1.0
  */
-public interface ExceptionCoder
+public interface ErrorCoder
 {
 	int getCode();
 }

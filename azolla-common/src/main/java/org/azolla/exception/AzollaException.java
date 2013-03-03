@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.azolla.exception.code.AzollaCode;
-import org.azolla.exception.code.ExceptionCoder;
+import org.azolla.exception.code.ErrorCoder;
 
 import com.google.common.base.Strings;
 
@@ -27,13 +27,13 @@ public class AzollaException extends RuntimeException
 {
 	private static final long			serialVersionUID	= 6975777768178330101L;
 
-	private ExceptionCoder				code;
+	private ErrorCoder				code;
 	private final Map<String, Object>	properties			= new TreeMap<String, Object>();
 
 	/**
 	 * Constructs a AzollaException with the specified detail code. 
 	 */
-	public AzollaException(ExceptionCoder code)
+	public AzollaException(ErrorCoder code)
 	{
 		setCode(code);
 	}
@@ -41,7 +41,7 @@ public class AzollaException extends RuntimeException
 	/**
 	 * Constructs a AzollaException with the specified detail code and message. 
 	 */
-	public AzollaException(ExceptionCoder code, String message)
+	public AzollaException(ErrorCoder code, String message)
 	{
 		super(message);
 		setCode(code);
@@ -50,7 +50,7 @@ public class AzollaException extends RuntimeException
 	/**
 	 * Constructs a AzollaException with the specified detail code and cause.
 	 */
-	public AzollaException(ExceptionCoder code, Throwable cause)
+	public AzollaException(ErrorCoder code, Throwable cause)
 	{
 		super(cause);
 		setCode(code);
@@ -59,7 +59,7 @@ public class AzollaException extends RuntimeException
 	/**
 	 * Constructs a AzollaException with the specified detail code, message and cause.
 	 */
-	public AzollaException(ExceptionCoder code, String message, Throwable cause)
+	public AzollaException(ErrorCoder code, String message, Throwable cause)
 	{
 		super(message, cause);
 		setCode(code);
@@ -85,7 +85,7 @@ public class AzollaException extends RuntimeException
 	 * @param code
 	 * @return AzollaException
 	 */
-	public static AzollaException wrap(Throwable cause, ExceptionCoder code)
+	public static AzollaException wrap(Throwable cause, ErrorCoder code)
 	{
 		if(null == cause)
 		{
@@ -204,7 +204,7 @@ public class AzollaException extends RuntimeException
 	 *
 	 * @return the code
 	 */
-	public ExceptionCoder getCode()
+	public ErrorCoder getCode()
 	{
 		if(null == code)
 		{
@@ -218,7 +218,7 @@ public class AzollaException extends RuntimeException
 	 *
 	 * @param code the code to set
 	 */
-	public void setCode(ExceptionCoder code)
+	public void setCode(ErrorCoder code)
 	{
 		if(null == code)
 		{

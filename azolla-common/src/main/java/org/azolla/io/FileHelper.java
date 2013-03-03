@@ -16,13 +16,13 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 /**
- * 文件帮助类
+ * Help for file
  * 
- * 文件对象：即Java中的File,可以是文件文件也可以是文件夹
- * 文件：属于Java中的File,但不包含文件夹
- * 文件夹：属于Java中的File,可包含文件
- * 文件路径：是Java中的String,是文件在磁盘上的路径字符串
- * 文件夹路径：是Java中的String,是文件夹在磁盘上的路径字符串
+ * The concept about some object:
+ * 1.file/path		:<code>File</code>/<code>String</code> object, maybe document,maybe directory and maybe null.
+ * 2.document		:<code>File</code>/<code>String</code> object, but it does not contain directory
+ * 3.directory		:<code>File</code>/<code>String</code> object, just directory
+ * 
  *
  * @author 	sk@azolla.org
  * @version 1.0.0
@@ -33,16 +33,7 @@ public class FileHelper
 	public static final String	ILLEGAL_FILENAME_REGEX	= "[{/\\\\:*?\"<>|}]";
 
 	/**
-	 * 根据文件对象获得其下所有文件路径(包括子文件夹的文件路径)
-	 * 
-	 * 下列情况返回空列表
-	 * 1.文件对象在磁盘上不存在
-	 * 2.文件对象为空文件夹
-	 * 
-	 * 如果文件对象为文件则返回包含该文件路径的文件路径列表
-	 * 
-	 * @param 	file			文件对象
-	 * @return 	List<String>	文件路径列表(不包含文件夹路径)
+	 * @see org.azolla.io.FileHelper#allFiles(File)
 	 */
 	public static List<String> allFilePaths(File file)
 	{
@@ -64,16 +55,7 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件路径获得其下所有文件路径(包括子文件夹的文件路径)
-	 * 
-	 * 下列情况返回空列表
-	 * 1.文件路径在磁盘上不存在
-	 * 2.文件路径为空文件夹
-	 * 
-	 * 如果文件路径为文件则返回包含该文件路径的文件路径列表
-	 * 
-	 * @param 	path			文件路径
-	 * @return 	List<String>	文件路径列表(不包含文件夹路径)
+	 * @see org.azolla.io.FileHelper#allFilePaths(File)
 	 */
 	public static List<String> allFilePaths(String path)
 	{
@@ -81,16 +63,17 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件对象获得其下所有文件(包括子文件夹的文件)
+	 * Return all document under this directory and sub directory.
+	 * if the file is document return it.
 	 * 
-	 * 下列情况返回空列表
-	 * 1.文件对象在磁盘上不存在
-	 * 2.文件对象为空文件夹
+	 * Return empty when:
+	 * 1.file not exist
+	 * 2.file is an empty directory
 	 * 
-	 * 如果文件对象为文件则返回包含该文件的文件列表
+	 * Throw exception with the file is null.
 	 * 
-	 * @param 	file		文件对象
-	 * @return 	List<File>	文件列表
+	 * @param file document or directory
+	 * @return the container with document
 	 */
 	public static List<File> allFiles(File file)
 	{
@@ -114,16 +97,7 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件路径获得其下所有文件(包括子文件夹的文件)
-	 * 
-	 * 下列情况返回空列表
-	 * 1.文件路径在磁盘上不存在
-	 * 2.文件路径为空文件夹
-	 * 
-	 * 如果文件路径为文件则返回包含该文件的文件列表
-	 * 
-	 * @param 	path		文件路径
-	 * @return 	List<File> 	文件列表
+	 * @see org.azolla.io.FileHelper#allFiles(File)
 	 */
 	public static List<File> allFiles(String path)
 	{
@@ -131,12 +105,13 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件对象删除其下所有空文件(包括子文件夹的空文件)
+	 * Delete all empty document under this directory and sub directory.
+	 * if the file is empty document delete it.
 	 * 
-	 * 如果文件对象为文件,且为空,则删除该文件
+	 * return false when some empty document delete failure,but delete is go on
 	 * 
-	 * @param 	file	文件对象
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @param file document or directory
+	 * @return will return true with out false when some empty document delete failure
 	 */
 	public static boolean delAllEmptyFiles(File file)
 	{
@@ -163,12 +138,7 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件路径删除其下所有空文件(包括子文件夹的空文件)
-	 * 
-	 * 如果文件路径为文件,且为空,则删除该文件
-	 * 
-	 * @param 	path	文件路径
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @see org.azolla.io.FileHelper#delAllEmptyFiles(File)
 	 */
 	public static boolean delAllEmptyFiles(String path)
 	{
@@ -176,14 +146,13 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件对象删除其下所有文件(包括子文件夹的文件)
+	 * Delete file sub files and  under this directory and sub directory.
+	 * if this file is document or empty directory delete it.
 	 * 
-	 * 如果文件对象为文件,则删除该文件
-	 * 
-	 * @param 	file	文件对象
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @param file document or directory
+	 * @return will return true with out false when some file delete failure
 	 */
-	public static boolean delAllFiles(File file)
+	public static boolean delDirectory(File file)
 	{
 		Preconditions.checkNotNull(file);
 		boolean ret = true;
@@ -193,8 +162,9 @@ public class FileHelper
 			{
 				for(File f : file.listFiles())
 				{
-					ret = ret && delAllFiles(f);
+					ret = ret && delDirectory(f);
 				}
+				ret = ret && file.delete();
 			}
 			else
 			{
@@ -205,64 +175,21 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件路径删除其下所有文件(包括子文件夹的文件)
-	 * 
-	 * 如果文件路径为文件,则删除该文件
-	 * 
-	 * @param 	path	文件路径
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @see org.azolla.io.FileHelper#delDirectory(File)
 	 */
-	public static boolean delAllFiles(String path)
+	public static boolean delDirectory(String path)
 	{
-		return delAllFiles(new File(path));
+		return delDirectory(new File(path));
 	}
 
 	/**
-	 * 删除文件对象包括其下所有文件对象
+	 * Delete all empty document under this directory.
+	 * if the file is empty document delete it.
 	 * 
-	 * @param 	dir		文件对象
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
-	 */
-	public static boolean delDir(File dir)
-	{
-		Preconditions.checkNotNull(dir);
-		boolean ret = true;
-		if(dir.exists())
-		{
-			if(dir.isDirectory() && dir.list() != null)
-			{
-				for(File f : dir.listFiles())
-				{
-					ret = ret && delDir(f);
-				}
-				ret = ret && dir.delete();
-			}
-			else
-			{
-				ret = ret && dir.delete();
-			}
-		}
-		return ret;
-	}
-
-	/**
-	 * 删除文件路径包括其下所有文件对象
+	 * return false when some empty document delete failure,but delete is go on
 	 * 
-	 * @param 	dir		文件路径
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
-	 */
-	public static boolean delDir(String dir)
-	{
-		return delDir(new File(dir));
-	}
-
-	/**
-	 * 根据文件对象删除其下所有空文件(不包括子文件夹的空文件)
-	 * 
-	 * 如果文件对象为文件,且为空,则删除该文件
-	 * 
-	 * @param 	file	文件对象
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @param file document or directory
+	 * @return will return true with out false when some empty document delete failure
 	 */
 	public static boolean delEmptyFiles(File file)
 	{
@@ -295,12 +222,7 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件路径删除其下所有空文件(不包括子文件夹的空文件)
-	 * 
-	 * 如果文件路径为文件,且为空,则删除该文件
-	 * 
-	 * @param 	path	文件路径
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @see org.azolla.io.FileHelper#delEmptyFiles(File)
 	 */
 	public static boolean delEmptyFiles(String path)
 	{
@@ -308,12 +230,11 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件对象删除其下所有文件(不包括子文件夹的文件)
+	 * Delete all document under this directory.
+	 * if the file is document delete it.
 	 * 
-	 * 如果文件对象为文件,则删除该文件
-	 * 
-	 * @param 	file	文件对象
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @param file document or directory
+	 * @return will return true with out false when some empty document delete failure
 	 */
 	public static boolean delFiles(File file)
 	{
@@ -340,13 +261,7 @@ public class FileHelper
 	}
 
 	/**
-	 * 
-	 * 根据文件路径删除其下所有文件(不包括子文件夹的文件)
-	 * 
-	 * 如果文件路径为文件,则删除该文件
-	 * 
-	 * @param 	path	文件路径
-	 * @return 	boolean	结果:全部删除成功为true,如有失败为false
+	 * @see org.azolla.io.FileHelper#delFiles(File)
 	 */
 	public static boolean delFiles(String path)
 	{
@@ -354,11 +269,11 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件类型及文件对象列表获得其下所有属于该类型的文件(包括子文件夹的文件)
+	 * filter files by file type.
 	 * 
-	 * @param 	fileType	文件类型
-	 * @param 	files		文件对象列表
-	 * @return 	List<File>	指定文件类型的文件列表
+	 * @param fileType file type
+	 * @param files	file list
+	 * @return  file list of the file end with file type
 	 */
 	public static List<File> getFilesByType(String fileType, List<File> files)
 	{
@@ -382,11 +297,8 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件类型及文件路径获得其下所有属于该类型的文件(包括子文件夹的文件)
-	 * 
-	 * @param 	fileType	文件类型
-	 * @param 	path		文件路径
-	 * @return 	List<File>	指定文件类型的文件列表
+	 * @see org.azolla.io.FileHelper#getFilesByType(String, List<File>)
+	 * @see org.azolla.io.FileHelper#allFiles(String)
 	 */
 	public static List<File> getFilesByType(String fileType, String path)
 	{
@@ -394,59 +306,53 @@ public class FileHelper
 	}
 
 	/**
-	 * 根据文件对象获得文件类型(test.txt->txt)
-	 * 
-	 * @param 	file	文件对象
-	 * @return 	String	文件类型
+	 * @see org.azolla.io.FileHelper#getFileType(String)
 	 */
 	public static String getFileType(File file)
 	{
 		Preconditions.checkNotNull(file);
-		try
-		{
-			return getFileType(file.getCanonicalPath());
-		}
-		catch(IOException e)
-		{
-			return getFileType(file.getAbsolutePath());
-		}
+		return getFileType(file.getName());
 	}
 
 	/**
+	 * return type of file by file name
+	 * example:test.txt -> txt
 	 * 
-	 * 根据文件路径获得文件类型(test.txt->txt)
-	 * 
-	 * @param 	filePath	文件路径
-	 * @return 	String		文件类型
+	 * @param fileName file name
+	 * @return type of file
 	 */
-	public static String getFileType(String filePath)
+	public static String getFileType(String fileName)
 	{
-		Preconditions.checkNotNull(filePath);
-		int lastPointIndex = filePath.lastIndexOf(".");
-		return filePath.substring(lastPointIndex + 1);
+		Preconditions.checkNotNull(fileName);
+		int lastPointIndex = fileName.lastIndexOf(".");
+		if(-1 == lastPointIndex)
+		{
+			return fileName;
+		}
+		else
+		{
+			return fileName.substring(lastPointIndex + 1);
+		}
 	}
 
 	/**
-	 * 非法文件名转换为合法文件名,非法字符用"_"替代
-	 * 
-	 * @param 	fileName	可能含非法字符的文件名
-	 * @return 	String		不含非法字符的文件名
+	 * @see org.azolla.io.FileHelper#toLegalFileName(String, String)
 	 */
 	public static String toLegalFileName(String fileName)
 	{
-		return toLegalFileName(fileName, "_");
+		return toLegalFileName(fileName, null);
 	}
 
 	/**
-	 * 非法文件名转换为合法文件名,非法字符用合法字符({@code legalString})替代
+	 * transform legal file name
 	 * 
-	 * @param 	fileName	可能含非法字符的文件名
-	 * @param 	legalString	合法字符
-	 * @return 	String		不含非法字符的文件名
+	 * @param fileName file name
+	 * @param legalString legal string, if null or empty to "_"
+	 * @return legal file name
 	 */
 	public static String toLegalFileName(String fileName, String legalString)
 	{
 		Preconditions.checkNotNull(fileName);
-		return fileName.replaceAll(ILLEGAL_FILENAME_REGEX, legalString);
+		return fileName.replaceAll(ILLEGAL_FILENAME_REGEX, Strings.isNullOrEmpty(legalString) ? "_" : legalString);
 	}
 }
