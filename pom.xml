@@ -20,7 +20,7 @@
 	<!-- 定义项目的打包方式，可以是jar(默认)、war -->
 	<packaging>pom</packaging>
 	<!-- 项目名 -->
-	<name>Azolla.org Top Parent</name>
+	<name>Azolla.org Open Top Parent</name>
 	<!-- 项目当前所处的版本 -->
 	<version>1.0.0</version>
 	<!-- 
@@ -44,7 +44,7 @@
 		指最后一个发布版。 
 	<RELEASE></RELEASE> 
 	-->
-	<description>Azolla.org Top Parent</description>
+	<description>Azolla.org Open Top Parent</description>
 	<properties>
 		<maven.compile.source>1.6</maven.compile.source>
 		<maven.compile.target>1.6</maven.compile.target>
