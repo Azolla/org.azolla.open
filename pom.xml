@@ -9,7 +9,7 @@
 		来自Sonatype的项目有一个以com.sonatype开头的groupId， 
 		而Apache Software的项目有以org.apache开头的groupId。 
 	-->
-	<groupId>org.azolla</groupId>
+	<groupId>org.azolla.open</groupId>
 	<!-- 
 		该元素定义实际项目中的一个Maven项目，推荐的做法是使用实际项目的名称作为前缀。 
 		在groupId下的表示一个单独项目的唯一标识符。 
