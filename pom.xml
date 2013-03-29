@@ -16,7 +16,7 @@
 		比如我们的tomcat, commons等。 
 		!不要在artifactId中包含点号(.)。 
 	-->
-	<artifactId>azolla-open</artifactId>
+	<artifactId>org.azolla.open</artifactId>
 	<!-- 定义项目的打包方式，可以是jar(默认)、war -->
 	<packaging>pom</packaging>
 	<!-- 项目名 -->
