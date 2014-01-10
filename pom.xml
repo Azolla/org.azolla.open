@@ -187,7 +187,7 @@
 		</pluginManagement>
 		<resources>
 			<resource>
-				<directory>src/main/java</directory>
+				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/*.gif</include>
 				</includes>
