@@ -1,70 +1,47 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<!-- 
-		定义该项目的隶属。 
-	
-		团体，公司，小组，组织，项目，或者其它团体。 
-		团体标识的约定是，它以创建这个项目的组织名称的逆向域名(reverse	domain name)开头。 
-		来自Sonatype的项目有一个以com.sonatype开头的groupId， 
-		而Apache Software的项目有以org.apache开头的groupId。 
-	-->
+	<!-- 定义该项目的隶属。 团体，公司，小组，组织，项目，或者其它团体。 团体标识的约定是，它以创建这个项目的组织名称的逆向域名(reverse 
+		domain name)开头。 来自Sonatype的项目有一个以com.sonatype开头的groupId， 而Apache Software的项目有以org.apache开头的groupId。 -->
 	<groupId>org.azolla.open</groupId>
-	<!-- 
-		该元素定义实际项目中的一个Maven项目，推荐的做法是使用实际项目的名称作为前缀。 
-		在groupId下的表示一个单独项目的唯一标识符。 
-		比如我们的tomcat, commons等。 
-		!不要在artifactId中包含点号(.)。 
-	-->
+	<!-- 该元素定义实际项目中的一个Maven项目，推荐的做法是使用实际项目的名称作为前缀。 在groupId下的表示一个单独项目的唯一标识符。 
+		比如我们的tomcat, commons等。 !不要在artifactId中包含点号(.)。 -->
 	<artifactId>org.azolla.open</artifactId>
 	<!-- 定义项目的打包方式，可以是jar(默认)、war -->
 	<packaging>pom</packaging>
 	<!-- 项目名 -->
-	<name>Azolla.org Open Top Parent</name>
+	<name>org.azolla.open</name>
 	<!-- 项目当前所处的版本 -->
 	<version>1.0.0</version>
-	<!-- 
-		如果你要发布同样的代码，但是由于技术原因需要生成两个单独的构件，你就要使用一个分类器（classifier）。 
-		例如，如果你想要构建两个单独的构件成JAR，一个使用Java 1.4编译器，另一个使用Java 6编译器， 你就可以使用分类器来生成两个单独的JAR构件， 
-		如：hello-world-1.0-SNAPSHOT-javadoc.jar 
-	<classifier></classifier> 
-	-->
-	<!-- 
-		如果一个版本包含字符串"SNAPSHOT"，Maven就会在安装或发布这个组件的时候将该符号展开为一个日期和时间值，转换为UTC时间。 
-		例如，"1.0-SNAPSHOT"会在2010年5月5日下午2点10分发布时候变成1.0-20100505-141000-1。 
-		这个词只能用于开发过程中，因为一般来说，项目组都会频繁发布一些版本，最后实际发布的时候，会在这些snapshot版本中寻找一个稳定的，用于正式发布。 
-		比如1.4版本发布之前，就会有一系列的1.4-SNAPSHOT，而实际发布的1.4，也是从中拿出来的一个稳定版。 
-	<SNAPSHOT></SNAPSHOT> 
-	-->
-	<!-- 
-		指某个特定构件的最新发布，这个发布可能是一个发布版，也可能是一个snapshot版，具体看哪个时间最后。 
-	<LATEST></LATEST> 
-	-->
-	<!-- 
-		指最后一个发布版。 
-	<RELEASE></RELEASE> 
-	-->
+	<!-- 如果你要发布同样的代码，但是由于技术原因需要生成两个单独的构件，你就要使用一个分类器（classifier）。 例如，如果你想要构建两个单独的构件成JAR，一个使用Java 
+		1.4编译器，另一个使用Java 6编译器， 你就可以使用分类器来生成两个单独的JAR构件， 如：hello-world-1.0-SNAPSHOT-javadoc.jar 
+		<classifier></classifier> -->
+	<!-- 如果一个版本包含字符串"SNAPSHOT"，Maven就会在安装或发布这个组件的时候将该符号展开为一个日期和时间值，转换为UTC时间。 
+		例如，"1.0-SNAPSHOT"会在2010年5月5日下午2点10分发布时候变成1.0-20100505-141000-1。 这个词只能用于开发过程中，因为一般来说，项目组都会频繁发布一些版本，最后实际发布的时候，会在这些snapshot版本中寻找一个稳定的，用于正式发布。 
+		比如1.4版本发布之前，就会有一系列的1.4-SNAPSHOT，而实际发布的1.4，也是从中拿出来的一个稳定版。 <SNAPSHOT></SNAPSHOT> -->
+	<!-- 指某个特定构件的最新发布，这个发布可能是一个发布版，也可能是一个snapshot版，具体看哪个时间最后。 <LATEST></LATEST> -->
+	<!-- 指最后一个发布版。 <RELEASE></RELEASE> -->
 	<description>Azolla.org Open Top Parent</description>
 	<properties>
-		<maven.compile.source>1.7</maven.compile.source>
-		<maven.compile.target>1.7</maven.compile.target>
+		<maven.compile.source>1.8</maven.compile.source>
+		<maven.compile.target>1.8</maven.compile.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
-		<maven-surefire-report-plugin.version>2.16</maven-surefire-report-plugin.version>
+		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
+		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
 		<junit.version>4.11</junit.version>
-		<guava.version>15.0</guava.version>
+		<guava.version>16.0.1</guava.version>
 		<commons-io.version>2.4</commons-io.version>
-		<slf4j-api.version>1.7.5</slf4j-api.version>
-		<slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
+		<slf4j-api.version>1.7.6</slf4j-api.version>
+		<slf4j-log4j12.version>1.7.6</slf4j-log4j12.version>
 		<log4j.version>1.2.17</log4j.version>
 		<nbantext.version>4.0</nbantext.version>
 		<commons-net.version>3.3</commons-net.version>
-		<ant.version>1.9.2</ant.version>
-		<jsr305.version>2.0.2</jsr305.version>
+		<ant.version>1.9.3</ant.version>
+		<jsr305.version>2.0.3</jsr305.version>
 		<servlet-api.version>2.5</servlet-api.version>
-		<maven-release-plugin.version>2.4.2</maven-release-plugin.version>
+		<maven-release-plugin.version>2.5</maven-release-plugin.version>
 	</properties>
 	<!-- 依赖管理 -->
 	<dependencyManagement>
@@ -73,10 +50,10 @@
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
-				<!-- compile，缺省值，适用于所有阶段，会随着项目一起发布。							-->
-				<!-- provided，类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。 		-->
-				<!-- runtime，只在运行时使用，如JDBC驱动，适用运行和测试阶段。 						-->
-				<!-- test，只在测试时使用，用于编译和运行测试代码。不会随项目发布。						-->
+				<!-- compile，缺省值，适用于所有阶段，会随着项目一起发布。 -->
+				<!-- provided，类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。 -->
+				<!-- runtime，只在运行时使用，如JDBC驱动，适用运行和测试阶段。 -->
+				<!-- test，只在测试时使用，用于编译和运行测试代码。不会随项目发布。 -->
 				<!-- system，类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它。 -->
 				<scope>test</scope>
 			</dependency>
@@ -185,13 +162,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.gif</include>
-				</includes>
-			</resource>
-		</resources>
 	</build>
 </project>
