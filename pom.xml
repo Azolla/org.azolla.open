@@ -167,7 +167,7 @@
 		<!--给开发者使用的，类似connection元素。即该连接不仅仅只读-->
 		<developerConnection>scm:git:git@github.com:Azollas/org.azolla.open.git</developerConnection>
 		<!--当前代码的标签，在开发阶段默认为HEAD-->
-		<!-- <tag /> -->
+		<!-- <tag>org.azolla.open-1.0.0</tag> -->
 		<!--指向项目的可浏览SCM库（例如ViewVC或者Fisheye）的URL。-->
 		<url>scm:git:git@github.com:Azollas/org.azolla.open.git</url>
 	</scm>
