@@ -169,7 +169,7 @@
 		<!--当前代码的标签，在开发阶段默认为HEAD-->
 		<!-- <tag>org.azolla.open-1.0.0</tag> -->
 		<!--指向项目的可浏览SCM库（例如ViewVC或者Fisheye）的URL。-->
-		<url>scm:git:git@github.com:Azollas/org.azolla.open.git</url>
+		<url>git@github.com:Azollas/org.azolla.open.git</url>
 	</scm>
 	<!--项目的问题管理系统(Bugzilla, Jira, Scarab,或任何你喜欢的问题管理系统)的名称和URL，本例为 jira-->
 	<issueManagement>
@@ -279,20 +279,20 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
-		<maven-surefire-report-plugin.version>2.16</maven-surefire-report-plugin.version>
+		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
+		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
 		<junit.version>4.11</junit.version>
-		<guava.version>15.0</guava.version>
+		<guava.version>16.0.1</guava.version>
 		<commons-io.version>2.4</commons-io.version>
-		<slf4j-api.version>1.7.5</slf4j-api.version>
-		<slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
+		<slf4j-api.version>1.7.6</slf4j-api.version>
+		<slf4j-log4j12.version>1.7.6</slf4j-log4j12.version>
 		<log4j.version>1.2.17</log4j.version>
 		<nbantext.version>4.0</nbantext.version>
 		<commons-net.version>3.3</commons-net.version>
-		<ant.version>1.9.2</ant.version>
-		<jsr305.version>2.0.2</jsr305.version>
+		<ant.version>1.9.3</ant.version>
+		<jsr305.version>2.0.3</jsr305.version>
 		<servlet-api.version>2.5</servlet-api.version>
-		<maven-release-plugin.version>2.4.2</maven-release-plugin.version>
+		<maven-release-plugin.version>2.5</maven-release-plugin.version>
 	</properties>
 	<!--继承自该项目的所有子项目的默认依赖信息。这部分的依赖信息不会被立即解析,而是当子项目声明一个依赖（必须描述group ID和artifact ID信息），如果group ID和artifact ID以外的一些信息没有描述，则通过group ID和artifact ID匹配到这里的依赖，并使用这里的依赖信息。-->
 	<dependencyManagement>
