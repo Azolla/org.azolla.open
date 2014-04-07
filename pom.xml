@@ -50,7 +50,7 @@
             -->
 			<distribution>repo</distribution>
 			<!--关于license的补充信息-->
-			<comments>The Azolla Open Source is released under version 2.0 of the Apache License.</comments>
+			<comments>The Azolla.org Open Source is released under version 2.0 of the Apache License.</comments>
 		</license>
 	</licenses>
 	<!--项目开发者列表-->
