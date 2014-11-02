@@ -5,7 +5,7 @@
 		<groupId>org.azolla.open</groupId>
 		<artifactId>org.azolla.open</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../org.azolla.open</relativePath>
+		<relativePath>../../org.azolla.open</relativePath>
 	</parent>
 
 	<groupId>org.azolla.open</groupId>
