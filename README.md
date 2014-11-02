@@ -1,4 +1,4 @@
-## Azolla Open [![Build Status](https://travis-ci.org/Azollas/org.azolla.open.png?branch=mirror)](https://travis-ci.org/Azollas/org.azolla.open) 
+## Azolla.org Open Source [![Build Status](https://travis-ci.org/Azollas/org.azolla.open.png?branch=mirror)](https://travis-ci.org/Azollas/org.azolla.open) 
 More to see [open.azolla.org][].
 
 ## License
