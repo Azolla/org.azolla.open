@@ -2,6 +2,7 @@
 .DS_Store
 .settings
 target
+*_mvn_deploy.launch
 
 # Eclipse artifacts
 *azolla*/src/main/java/META-INF/MANIFEST.MF
