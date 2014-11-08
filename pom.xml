@@ -21,9 +21,9 @@
 	<!--项目产生的构件类型，例如jar、war、ear、pom。插件可以创建他们自己的构件类型，所以前面列的不是全部构件类型 -->
 	<packaging>pom</packaging>
 	<!--项目的名称, Maven产生的文档用 -->
-	<name>Azolla.org Open Top Parent</name>
+	<name>Azolla.org Open Source Top Parent</name>
 	<!--项目的详细描述, Maven 产生的文档用。 当这个元素能够用HTML格式描述时（例如，CDATA中的文本会被解析器忽略，就可以包含HTML标签）， 不鼓励使用纯文本描述。如果你需要修改产生的web站点的索引页面，你应该修改你自己的索引页文件，而不是调整这里的文档。 -->
-	<description>This project is Azolla.org open top parent</description>
+	<description>This project is Azolla.org open source top parent</description>
 	<!--项目主页的URL, Maven产生的文档用 -->
 	<url>https://github.com/Azollas/org.azolla.open</url>
 	<!--项目创建年份，4位数字。当产生版权信息时需要使用这个值。 -->
@@ -40,9 +40,9 @@
 		<!--描述了项目的license，用于生成项目的web站点的license页面，其他一些报表和validation也会用到该元素。 -->
 		<license>
 			<!--license用于法律上的名称 -->
-			<name>Apache License</name>
+			<name>The Apache Software License, Version 2.0</name>
 			<!--官方的license正文页面的URL -->
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 			<!-- 项目分发的主要方式： repo :可以从Maven库下载 manual :用户必须手动下载和安装依赖 -->
 			<distribution>repo</distribution>
 			<!--关于license的补充信息 -->
@@ -56,9 +56,9 @@
 			<!--SCM里项目开发者的唯一标识符 -->
 			<id>Azolla</id>
 			<!--项目开发者的全名 -->
-			<name>Azolla</name>
+			<name>ShaneKing</name>
 			<!--项目开发者的email -->
-			<email>sk@azolla.org</email>
+			<email>github@azolla.org</email>
 			<!--项目开发者的主页的URL -->
 			<url>https://github.com/Azolla</url>
 			<!--项目开发者所属组织 -->
@@ -175,34 +175,34 @@
 		<url>https://github.com/Azollas/org.azolla.open/issues</url>
 	</issueManagement>
 	<!--项目持续集成信息 -->
-	<!-- <ciManagement> -->
-	<!--持续集成系统的名字，例如continuum -->
-	<!-- <system /> -->
-	<!--该项目使用的持续集成系统的URL（如果持续集成系统有web接口的话）。 -->
-	<!-- <url /> -->
-	<!--构建完成时，需要通知的开发者/用户的配置项。包括被通知者信息和通知条件（错误，失败，成功，警告） -->
-	<!-- <notifiers> -->
-	<!--配置一种方式，当构建中断时，以该方式通知用户/开发者 -->
-	<!-- <notifier> -->
-	<!--传送通知的途径 -->
-	<!-- <type /> -->
-	<!--发生错误时是否通知 -->
-	<!-- <sendOnError /> -->
-	<!--构建失败时是否通知 -->
-	<!-- <sendOnFailure /> -->
-	<!--构建成功时是否通知 -->
-	<!-- <sendOnSuccess /> -->
-	<!--发生警告时是否通知 -->
-	<!-- <sendOnWarning /> -->
-	<!--不赞成使用。通知发送到哪里 -->
-	<!-- <address /> -->
-	<!--扩展配置项 -->
-	<!-- <configuration> -->
-	<!-- <key>value</key> -->
-	<!-- </configuration> -->
-	<!-- </notifier> -->
-	<!-- </notifiers> -->
-	<!-- </ciManagement> -->
+	<ciManagement>
+		<!--持续集成系统的名字，例如continuum -->
+		<system>Travis-CI</system>
+		<!--该项目使用的持续集成系统的URL（如果持续集成系统有web接口的话）。 -->
+		<url>https://travis-ci.org/Azollas/org.azolla.open</url>
+		<!--构建完成时，需要通知的开发者/用户的配置项。包括被通知者信息和通知条件（错误，失败，成功，警告） -->
+		<!-- <notifiers> -->
+		<!--配置一种方式，当构建中断时，以该方式通知用户/开发者 -->
+		<!-- <notifier> -->
+		<!--传送通知的途径 -->
+		<!-- <type /> -->
+		<!--发生错误时是否通知 -->
+		<!-- <sendOnError /> -->
+		<!--构建失败时是否通知 -->
+		<!-- <sendOnFailure /> -->
+		<!--构建成功时是否通知 -->
+		<!-- <sendOnSuccess /> -->
+		<!--发生警告时是否通知 -->
+		<!-- <sendOnWarning /> -->
+		<!--不赞成使用。通知发送到哪里 -->
+		<!-- <address /> -->
+		<!--扩展配置项 -->
+		<!-- <configuration> -->
+		<!-- <key>value</key> -->
+		<!-- </configuration> -->
+		<!-- </notifier> -->
+		<!-- </notifiers> -->
+	</ciManagement>
 	<!--项目分发信息，在执行mvn deploy后表示要发布的位置。有了这些信息就可以把网站部署到远程服务器或者把构件部署到远程仓库。 -->
 	<distributionManagement>
 		<!--项目分发信息，在执行mvn deploy后表示要发布的位置。有了这些信息就可以把网站部署到远程服务器或者把构件部署到远程仓库。 -->
@@ -270,41 +270,60 @@
 	<!--以值替代名称，Properties可以在整个POM中使用，也可以作为触发条件（见settings.xml配置文件里activation元素的说明）。格式是<name>value</name>。 -->
 	<properties>
 		<!-- <key>value</key> -->
-		<ant.version>1.9.3</ant.version>
-		
-		<commons-io.version>2.4</commons-io.version>
-		<commons-net.version>3.3</commons-net.version>
-		
-		<guava.version>16.0.1</guava.version>
-		
-		<jsr305.version>2.0.3</jsr305.version>
-		<junit.version>4.11</junit.version>
-		
-		<log4j.version>1.2.17</log4j.version>
-		
 		<maven.compile.source>1.8</maven.compile.source>
 		<maven.compile.target>1.8</maven.compile.target>
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
-		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
-		<maven-release-plugin.version>2.5</maven-release-plugin.version>
-		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-		<maven-source-plugin.version>2.4</maven-source-plugin.version>
-		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
-		
-		<nbantext.version>4.0</nbantext.version>
-		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
+		<!-- dependencies -->
+		<ant.version>1.9.3</ant.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-net.version>3.3</commons-net.version>
+		<guava.version>16.0.1</guava.version>
+		<jsr305.version>2.0.3</jsr305.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<nbantext.version>4.0</nbantext.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<slf4j-api.version>1.7.6</slf4j-api.version>
 		<slf4j-log4j12.version>1.7.6</slf4j-log4j12.version>
+		<!-- plugins -->
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+		<maven-release-plugin.version>2.5</maven-release-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
+		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
+		<maven-source-plugin.version>2.4</maven-source-plugin.version>
 	</properties>
 	<!--继承自该项目的所有子项目的默认依赖信息。这部分的依赖信息不会被立即解析,而是当子项目声明一个依赖（必须描述group ID和artifact ID信息），如果group ID和artifact ID以外的一些信息没有描述，则通过group ID和artifact ID匹配到这里的依赖，并使用这里的依赖信息。 -->
 	<dependencyManagement>
 		<!--该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。它们自动从项目定义的仓库中下载。要获取更多信息，请看项目依赖机制。 -->
 		<dependencies>
+			<dependency>
+				<groupId>org.apache.ant</groupId>
+				<artifactId>ant</artifactId>
+				<version>${ant.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>${commons-net.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${jsr305.version}</version>
+			</dependency>
 			<dependency>
 				<!--依赖的group ID -->
 				<groupId>junit</groupId>
@@ -333,26 +352,6 @@
 				<!-- <optional /> -->
 			</dependency>
 			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>${commons-io.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j-log4j12.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
@@ -363,24 +362,20 @@
 				<version>${nbantext.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>commons-net</groupId>
-				<artifactId>commons-net</artifactId>
-				<version>${commons-net.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.ant</groupId>
-				<artifactId>ant</artifactId>
-				<version>${ant.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>jsr305</artifactId>
-				<version>${jsr305.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
 				<version>${servlet-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j-log4j12.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -606,6 +601,16 @@
 						<target>${maven.compile.target}</target>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+					<configuration>
+						<checkModificationExcludes>
+							<checkModificationExclude>pom.xml</checkModificationExclude>
+						</checkModificationExcludes>
+					</configuration>
+				</plugin>
 				<plugin><!-- resources -->
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
@@ -633,16 +638,6 @@
 					<configuration>
 						<encoding>${project.build.sourceEncoding}</encoding>
 						<showSuccess>false</showSuccess>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>${maven-release-plugin.version}</version>
-					<configuration>
-						<checkModificationExcludes>
-							<checkModificationExclude>pom.xml</checkModificationExclude>
-						</checkModificationExcludes>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -790,16 +785,16 @@
 			<!-- </activation> -->
 			<build>
 				<plugins>
-					<!-- Source -->
+					<!-- GPG -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>${maven-source-plugin.version}</version>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
 						<executions>
 							<execution>
-								<phase>package</phase>
+								<phase>verify</phase>
 								<goals>
-									<goal>jar-no-fork</goal>
+									<goal>sign</goal>
 								</goals>
 							</execution>
 						</executions>
@@ -818,16 +813,16 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- GPG -->
+					<!-- Source -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${maven-gpg-plugin.version}</version>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>${maven-source-plugin.version}</version>
 						<executions>
 							<execution>
-								<phase>verify</phase>
+								<phase>package</phase>
 								<goals>
-									<goal>sign</goal>
+									<goal>jar-no-fork</goal>
 								</goals>
 							</execution>
 						</executions>

@@ -13,5 +13,6 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
-	<name>Azolla.org - TODO</name>
+	<name>TODO: For new member</name>
+	<description>There are something must to do first for new member</description>
 </project>
