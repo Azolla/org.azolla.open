@@ -274,26 +274,26 @@
 		<maven.compile.target>1.8</maven.compile.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- dependencies -->
-		<ant.version>1.9.3</ant.version>
-		<commons-io.version>2.4</commons-io.version>
-		<commons-net.version>3.3</commons-net.version>
-		<guava.version>16.0.1</guava.version>
-		<jsr305.version>2.0.3</jsr305.version>
-		<junit.version>4.11</junit.version>
-		<log4j.version>1.2.17</log4j.version>
-		<nbantext.version>4.0</nbantext.version>
-		<servlet-api.version>2.5</servlet-api.version>
-		<slf4j-api.version>1.7.6</slf4j-api.version>
-		<slf4j-log4j12.version>1.7.6</slf4j-log4j12.version>
+		<ant.version>1.9.4</ant.version><!-- group:org.apache.ant -->
+		<commons-io.version>2.4</commons-io.version><!-- group:commons-io -->
+		<commons-net.version>3.3</commons-net.version><!-- group:commons-net -->
+		<guava.version>18.0</guava.version><!-- group:com.google.guava -->
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version><!-- group:javax.servlet -->
+		<jsr305.version>3.0.0</jsr305.version><!-- group:com.google.code.findbugs -->
+		<junit.version>4.12</junit.version><!-- group:junit -->
+		<log4j.version>1.2.17</log4j.version><!-- group:log4j -->
+		<nbantext.version>4.0</nbantext.version><!-- group:netbeans;ref:ant;dep: -->
+		<slf4j-api.version>1.7.12</slf4j-api.version><!-- group:org.slf4j -->
+		<slf4j-log4j12.version>1.7.12</slf4j-log4j12.version><!-- group:org.slf4j -->
 		<!-- plugins -->
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
-		<maven-release-plugin.version>2.5</maven-release-plugin.version>
-		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
-		<maven-surefire-report-plugin.version>2.17</maven-surefire-report-plugin.version>
-		<maven-source-plugin.version>2.4</maven-source-plugin.version>
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version><!-- org.apache.maven -->
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-javadoc-plugin.version>2.10.2</maven-javadoc-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-release-plugin.version>2.5.1</maven-release-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-resources-plugin.version>2.7</maven-resources-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-surefire-report-plugin.version>2.18.1</maven-surefire-report-plugin.version><!-- org.apache.maven.plugins -->
+		<maven-source-plugin.version>2.4</maven-source-plugin.version><!-- org.apache.maven.plugins -->
 	</properties>
 	<!--继承自该项目的所有子项目的默认依赖信息。这部分的依赖信息不会被立即解析,而是当子项目声明一个依赖（必须描述group ID和artifact ID信息），如果group ID和artifact ID以外的一些信息没有描述，则通过group ID和artifact ID匹配到这里的依赖，并使用这里的依赖信息。 -->
 	<dependencyManagement>
@@ -318,6 +318,12 @@
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
 				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javax.servlet-api.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.google.code.findbugs</groupId>
@@ -360,12 +366,6 @@
 				<groupId>netbeans</groupId>
 				<artifactId>nbantext</artifactId>
 				<version>${nbantext.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
-				<version>${servlet-api.version}</version>
-				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
