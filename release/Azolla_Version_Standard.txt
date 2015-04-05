@@ -1,3 +1,0 @@
-General：	XXX_DYYYYDDMM 					{txt,xml,doc}
-Product：	XXX Vx.x.x.y					[y为Build号][x.x为release号]
-JAR：		azolla.XXX_x.x.x.${date}.jar
