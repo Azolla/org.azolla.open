@@ -1,0 +1,30 @@
+/*azolla {via:prower.cn}*/
+body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ul,ol,li,button,input,textarea {margin: 0; padding: 0;}
+header,footer,article,section,nav,menu {display:block;}
+body {font-family:"Microsoft Yahei",Tahoma, Helvetica, Arial, "SimSun", sans-serif; font-size:100%; line-height:1.6; background:#f0f0f0; -webkit-text-size-adjust:none;}
+h1,h2,h3,h4,h5,h6 {line-height:1em;}
+h1 {font-size:1.5em;}
+h2 {font-size:1.4em;}
+h3 {font-size:1.3em;}
+h4 {font-size:1.2em;}
+h5 {font-size:1.1em;}
+h6 {font-size:1em;}
+sup,sub {font-size:0.7em;}
+del {color:#777;}
+table{border-collapse:collapse;border-spacing:0;}
+img {border:none;}
+a img:hover {background:none; border:none;}
+a {color:#0078aa; text-decoration:none;}
+a:hover {text-decoration:underline;}
+ol,ul {list-style:none;}
+p,h1,h2,h3,h4,h5,h6,address,blockquote,pre {margin-bottom:1em;}
+input,textarea,button {outline:none;}
+input[type="text"],input[type="password"],textarea {box-shadow:inset 2px 3px 5px #eee; border:1px solid #bbb; background:#fafafa;}
+input:focus,textarea:focus {background:#fff; border-color:#999;}
+input {vertical-align:middle;}
+input[type="radio"] {border:none; background:none; width:auto;}
+button {background:none;}
+::selection {color:#fff; background:#444; text-shadow:none;}
+blockquote,pre,address,code {border-left:2px solid #e6e6e6; background:#fafafa; padding:10px; font-size:0.8em; display:block;}
+blockquote blockquote,blockquote pre,blockquote address {font-size:0.9em;}
+pre code {padding-left:0; background:none; padding:0;}
