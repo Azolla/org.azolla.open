@@ -9,6 +9,7 @@ Size(32*32):	48px
 Size(48*48):	72px
 Size(150*150):	230px
 Size(200*200):	308px
+RGB8
 ------------------------------------------
 
 Azolla Domain Mail Logo Config
