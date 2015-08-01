@@ -636,7 +636,6 @@
 					<artifactId>maven-surefire-report-plugin</artifactId>
 					<version>${maven-surefire-report-plugin.version}</version>
 					<configuration>
-						<encoding>${project.build.sourceEncoding}</encoding>
 						<showSuccess>false</showSuccess>
 					</configuration>
 				</plugin>
