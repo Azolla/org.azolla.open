@@ -18,8 +18,8 @@ target
 *.class
 
 # cfg
-*.Azolla.Cfg.properties
-*.Azolla.Cfg.xml
+*.Cfg.Azolla.properties
+*.Cfg.Azolla.xml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
