@@ -40,13 +40,13 @@
 		<!--描述了项目的license，用于生成项目的web站点的license页面，其他一些报表和validation也会用到该元素。 -->
 		<license>
 			<!--license用于法律上的名称 -->
-			<name>The Apache Software License, Version 2.0</name>
+			<name>MIT</name>
 			<!--官方的license正文页面的URL -->
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<url>https://opensource.org/licenses/MIT</url>
 			<!-- 项目分发的主要方式： repo :可以从Maven库下载 manual :用户必须手动下载和安装依赖 -->
 			<distribution>repo</distribution>
 			<!--关于license的补充信息 -->
-			<comments>The Azolla.org Open Source is released under version 2.0 of the Apache License.</comments>
+			<comments>The Azolla.org Open Source is released under MIT License.</comments>
 		</license>
 	</licenses>
 	<!--项目开发者列表 -->
@@ -88,9 +88,9 @@
 			<!--项目开发者的主页的URL -->
 			<url>https://github.com/iShaneKing</url>
 			<!--项目开发者所属组织 -->
-			<organization>Azollas</organization>
+			<organization>iShaneKings</organization>
 			<!--项目开发者所属组织的URL -->
-			<organizationUrl>https://github.com/Azollas</organizationUrl>
+			<organizationUrl>https://github.com/iShaneKings</organizationUrl>
 			<!--项目开发者在项目中扮演的角色，角色元素描述了各种角色 -->
 			<roles>
 				<role>Team Leader</role>
